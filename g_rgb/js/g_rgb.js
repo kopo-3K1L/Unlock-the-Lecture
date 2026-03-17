@@ -3,16 +3,14 @@ const userBtn = document.getElementById('user-btn');
 const rInput = document.getElementById('r-input');
 const gInput = document.getElementById('g-input');
 const bInput = document.getElementById('b-input');
-const uButton = document.getElementById('user-btn');
-// const container = document.getElementById('scroll-')
-// container.innerHTML = `<p id="scroll-guide">스크롤을 내려 '진짜 수업하기 버튼'을 찾아주세요</p>` 
 
-// 일단 가상 정답
-let targetColor = { r: 159, g: 221, b: 34 }; 
-const threshold = 10; // 이 수치보다 작아야 성공 (난이도 조절)
+// 정답 설정
+let targetColor = { r: 34, g: 197, b: 94 };
+const threshold = 10;
 
 // 색상 업데이트 및 성공 체크 함수
 function updateGame() {
+    // 값이 비어있으면 0으로 처리
     const r = parseInt(rInput.value) || 0;
     const g = parseInt(gInput.value) || 0;
     const b = parseInt(bInput.value) || 0;
@@ -25,10 +23,12 @@ function updateGame() {
 
     if (diff <= threshold) {
         // 성공 조건 만족 시
+        userBtn.innerText = "수업한다"
         userBtn.classList.add('success-active');
         userBtn.onclick = nextStage; // 클릭 시 다음 스테이지 함수 실행
     } else {
         // 조건 불만족 시 다시 초기화
+        userBtn.innerText = "수업 안 함"
         userBtn.classList.remove('success-active');
         userBtn.onclick = null;
     }
@@ -40,23 +40,37 @@ function nextStage() {
     // 여기에 다음 정답 생성 및 스테이지 카운트 올리는 로직 추가
 }
 
+// 입력값 검증 함수 (0~255)
 function validateRGB(e) {
-    let value = parseInt(e.target.value);
+    let value = e.target.value;
 
-    // 1. 255보다 크면 255로 고정
-    if (value > 255) {
-        e.target.value = 255;
-    } 
-    // 2. 0보다 작거나 음수를 입력하면 0으로 고정
-    else if (value < 0) {
-        e.target.value = 0;
+    // 빈 문자열일 때는 0으로 처리하지 않고 비워둠
+    if (value === "") return updateGame();
+
+    // ex. 045 입력 방지, 바로 숫자로 바꿔주기 
+    let numValue = Number(value);
+
+    // 255 보다 큰 값 입력 시 자동으로 255
+    if (numValue > 255) {
+        numValue = 255;
+    } else if (numValue < 0 || isNaN(numValue)) {
+        numValue = 0;
     }
-    
-    // 이후 기존에 만든 색상 업데이트 함수 호출
-    updateGame(); 
+    e.target.value = numValue;
+    updateGame();
 }
 
 // 입력창에 이벤트 리스너 연결
 [rInput, gInput, bInput].forEach(input => {
+    input.addEventListener('keydown', (e) => {
+        // e, +, -, . 입력을 막음
+        if (['e', 'E', '+', '-', '.'].includes(e.key)) {
+            e.preventDefault();
+        }
+    });
+
     input.addEventListener('input', validateRGB);
 });
+
+// 초기 실행
+updateGame();
