@@ -1,0 +1,259 @@
+/* 1. 기본 초기화 및 드래그 방지 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  font-family:
+    "Pretendard",
+    -apple-system,
+    BlinkMacSystemFont,
+    system-ui,
+    Roboto,
+    sans-serif;
+}
+
+/* 2. 전체 배경 */
+body {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-x: auto;
+  background-image: url("../../asset/img/background.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-color: #f0f0f0;
+  z-index: 10;
+}
+
+/* 3. 1200px 고정 프레임 */
+#root {
+  width: 1200px;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 10px 50px rgba(0, 0, 0, 0.3);
+}
+
+/* 4. 헤더 영역 */
+#header {
+  width: 100%;
+  height: 80px;
+  border: 2px solid #333;
+  border-bottom: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 30px;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+#stage-info {
+  font-size: 18px;
+  font-weight: 600;
+  color: #555;
+}
+
+/* 5. 메인 게임 영역 */
+#container {
+  width: 100%;
+  height: 800px;
+  border: 2px solid #333;
+  position: relative;
+  background-color: #fafafa;
+  display: flex;
+  justify-content: center;
+  background-image: url("../../asset/img/timer-class.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+/* 6. 게임판 전체 래퍼 */
+.game-wrapper {
+  position: absolute;
+  top: 42%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* 7. 실시간 메시지 영역) */
+#warning-message {
+  height: 60px;
+  font-size: 28px;
+  font-weight: 900;
+  margin-bottom: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+  color: white;
+}
+
+/* 메시지 상태별 색상 */
+.msg-success {
+  color: #4caf50;
+  text-shadow: 0 0 10px rgba(76, 175, 80, 0.3);
+}
+.msg-danger {
+  color: #ff3d00;
+  text-shadow: 0 0 15px rgba(255, 61, 0, 0.4);
+}
+
+/* 8. 스톱워치 원형 본체 */
+.stopwatch {
+  width: 480px;
+  height: 480px;
+  background-color: transparent;
+  border: 22px solid #ffffff;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.1s ease-in-out;
+  position: relative;
+}
+
+.inner-circle {
+  width: 390px;
+  height: 390px;
+  background: rgba(255, 255, 255, 0.8);
+  background-image: url("../../asset/img/timer-teacher.JPEG");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: inset 0 0 25px rgba(0, 0, 0, 0.05);
+}
+
+/* 9. 타이머 텍스트 */
+#status-text {
+  font-size: 26px;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 5px;
+}
+
+#timer-display {
+  font-size: 95px;
+  font-weight: 900;
+  color: #ffffff;
+  font-family: "Courier New", Courier, monospace;
+  margin-bottom: 15px;
+}
+
+/* 10. 버튼 그룹 및 버튼 스타일 */
+.button-group {
+  display: flex;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+#action-btn,
+#reset-btn {
+  padding: 18px 45px;
+  font-size: 24px;
+  font-weight: bold;
+  cursor: pointer;
+  border: none;
+  border-radius: 50px;
+  color: white;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  transition: all 0.1s;
+}
+
+#action-btn {
+  background-color: #333;
+}
+#reset-btn {
+  background-color: #757575;
+}
+
+#action-btn:active,
+#reset-btn:active {
+  transform: scale(0.95);
+}
+
+/* 11. 애니메이션 */
+
+.stopwatch.success {
+  border-color: #4caf50 !important;
+  box-shadow: 0 0 50px rgba(76, 175, 80, 0.6);
+}
+#action-btn.success {
+  background-color: #4caf50 !important;
+}
+
+/* [놀기(빨간색) 상태] */
+.stopwatch.playing {
+  border-color: #f44336;
+}
+#action-btn.playing {
+  background-color: #f44336 !important;
+}
+
+/* [6초 초과] */
+@keyframes crazy-dance {
+  0% {
+    transform: translate(0, 0) rotate(0deg) scale(1);
+    border-color: #ff3d00;
+  }
+  20% {
+    transform: translate(-15px, 10px) rotate(-8deg) scale(1.08);
+    border-color: #ffeb3b;
+  }
+  40% {
+    transform: translate(15px, -10px) rotate(8deg) scale(0.92);
+    border-color: #2196f3;
+  }
+  60% {
+    transform: translate(-10px, -15px) rotate(-4deg) scale(1.15);
+    border-color: #9631a6;
+  }
+  80% {
+    transform: translate(10px, 15px) rotate(4deg) scale(0.95);
+    border-color: #00bcd4;
+  }
+  100% {
+    transform: translate(0, 0) rotate(0deg) scale(1);
+    border-color: #00ddff;
+  }
+}
+
+.stopwatch.exciting {
+  animation: crazy-dance 0.12s infinite linear; /* 매우 빠르고 격렬하게 춤춤 */
+  box-shadow: 0 0 100px rgba(255, 0, 0, 0.7);
+}
+
+.exciting-text {
+  color: #ff3d00 !important;
+  font-size: 32px !important;
+  font-weight: 900 !important;
+}
+
+/* [초기화 버튼 상태 - 회색] */
+#action-btn.reset-mode {
+  background-color: #757575 !important;
+  color: white;
+  transform: scale(1);
+  box-shadow: none;
+}
