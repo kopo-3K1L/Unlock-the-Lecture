@@ -1,0 +1,166 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-x: auto;
+  background-image: url("../../asset/img/background.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+#root {
+  width: 1200px;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+#header {
+  width: 100%;
+  height: 80px;
+  border: 2px solid #333;
+  border-bottom: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 30px;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  height: 50px;
+  margin-right: 10px;
+}
+
+#container {
+  width: 100%;
+  height: 800px;
+  border: 2px solid #333;
+  position: relative;
+  overflow: hidden;
+  background-image: url("../../asset/img/basicscreen.jpg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: #E2E2D7;
+}
+
+/*버튼 담는 컨테이너 */
+#buttons{
+    position: absolute;
+    left:50%;
+    top: 75%;
+    transform: translate(-50%,-50%);
+    background-color : transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap:40px;
+}
+
+/* 수업안하기 버튼 */
+#red-button {
+    padding: 20px 48px;       
+    color: white;             
+    font-size: 20px;           
+    font-weight: 600;          
+    text-align: center;
+    border-radius: 16px;     
+    border: none;
+    cursor: pointer;
+    background-color: #ef4444;
+    position: relative;       
+    overflow: hidden;          
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    transition: transform 0.4s ease, box-shadow 0.4s ease, background-color 0.2s;
+    outline: none;
+}
+
+#red-button:hover {
+    transform: scale(1.08);
+    box-shadow: 0 25px 50px rgba(239, 68, 68, 0.4);
+    background-color: #f87171;
+}
+
+#red-button:active {
+    transform: scale(0.92);
+}
+
+#red-button {
+    animation: buttonAppear 0.4s ease 0.2s forwards;
+    opacity: 0;
+}
+
+@keyframes buttonAppear {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+/* 수업하기 버튼 스타일 */
+#green-button {
+    padding: 20px 48px;        
+    color: white;            
+    font-size: 20px;           
+    font-weight: 600;
+    text-align: center;
+    border-radius: 16px;
+    background-color: #22c55e;
+    border: none;
+    cursor: pointer;
+    
+    position: relative;
+    overflow: hidden;          
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    
+    transition: transform 0.4s ease, box-shadow 0.4s ease, background-color 0.2s;
+    outline: none;
+    animation: greenAppear 0.4s ease 0.1s forwards;
+    opacity: 0;
+}
+
+/* 마우스 올렸을 때 (whileHover) */
+#green-button:hover {
+    transform: scale(1.08); 
+    background-color: #4ade80;
+}
+
+#green-button:active {
+    transform: scale(0.92);
+}
+
+@keyframes greenAppear {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
