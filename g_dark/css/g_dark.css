@@ -9,7 +9,6 @@
 }
 
 /* 게임 설명 */
-
 #dark-guide {
   width: 100%;
   padding: 14px 18px;
@@ -23,10 +22,11 @@
   z-index: 9999;
 }
 
-/* 버튼 공통 */
-.red-button, #green-button {
+/* 수업한다 버튼 */
+.green-btn {
   position: absolute; 
   padding: 20px 48px;
+  background-color: #22c55e; 
   color: white;
   font-size: 20px;
   font-weight: 600;
@@ -34,44 +34,59 @@
   border-radius: 16px;
   border: none;
   outline: none;
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
   user-select: none;
-  transition: transform 0.2s, background-color 0.2s;
   white-space: nowrap;
   margin: 0;
   display: block;
-}
-
-/* 수업 안 함 버튼 */
-.red-button {
-  background-color: #ef4444;
+  z-index: 100;
   cursor: grab;
-  z-index: 10;
   animation: buttonAppear 0.4s ease forwards;
-}
-.red-button:active {
-  cursor: grabbing;
-  transform: translate(-50%, -50%) scale(0.95);
+  --rotate: 0deg; 
+  transform: translate(-50%, -50%) rotate(var(--rotate));
 }
 
-/* 수업하기 버튼 */
-#green-button {
-  background-color: #22c55e;
-  cursor: pointer;
-  z-index: 1;
-  animation: greenAppear 0.4s ease forwards;
-}
-#green-button:hover {
+/* 호버 효과 */
+.green-btn:hover {
   background-color: #4ade80;
-  transform: scale(1.05);
+  transform: translate(-50%, -50%) rotate(var(--rotate)) scale(1.05);
 }
+
+/* 진짜 버튼 (아래에 숨기기 위한 z-index 설정) */
+.real-target {
+  z-index: 5 !important; 
+}
+
+/* 드래그 중 */
+.green-btn:active {
+  cursor: grabbing;
+}
+
 /* 애니메이션 정의 */
 /* JS의 top/left 좌표를 중앙에 맞추기 위해  translate(-50% -50%) 필요 */
 @keyframes buttonAppear {
-    from { opacity: 0; transform: translate(-50%, -50%) scale(0.9); }
-    to { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+    from { opacity: 0; transform: translate(-50%, -50%) rotate(var(--rotate)) scale(0.9); }
+    to { opacity: 1; transform: translate(-50%, -50%) rotate(var(--rotate)) scale(0.9); }
 }
 @keyframes greenAppear {
     from { opacity: 0; transform: translate(-50%, -50%) scale(0.9); }
     to { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+}
+
+/* 암흑 오버레이 */
+#dark-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  /* 마우스 위치에 따른 광원 효과 */
+  background: radial-gradient(
+    circle 150px at var(--cursor-x, 50%) var(--cursor-y, 50%),
+    transparent 10%,
+    rgba(0, 0, 0, 0.95) 100%
+  );
+  z-index: 500;
+  pointer-events: none;
 }
