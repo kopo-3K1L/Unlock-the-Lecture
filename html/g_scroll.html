@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>스크롤 게임</title>
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="stylesheet" href="../g_scroll/css/g_scroll.css" />
+  </head>
+  <body>
+    <div id="root">
+      <div id="header">
+        <div class="logo">
+          <span>LOGO</span>
+        </div>
+        <div id="stage-info">
+          stage <span id="stage-num">1</span> : 진짜 버튼을 찾아라!
+        </div>
+      </div>
+
+      <main id="container"></main>
+    </div>
+
+    <script type="module">
+      import { initScroll } from '../g_scroll/js/g_scroll.js';
+
+      const stage =
+        Number(new URLSearchParams(location.search).get('stage')) || 1;
+      document.getElementById('stage-num').textContent = stage;
+
+      initScroll(document.getElementById('container'), () => {
+        // 스테이지 순서 정해지면 다음 게임으로 이동 로직 추가
+        console.log('스크롤 클리어');
+      });
+    </script>
+  </body>
+</html>
