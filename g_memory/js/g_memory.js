@@ -9,7 +9,7 @@ let mainContainer = document.getElementById("container");
 function getDeck() {
   const deck = [];
   for (let i = 0; i < 12; i++) {
-    deck.push({ text: "수업하기", type: "go" });
+    deck.push({ text: "수업한다", type: "go" });
   }
   for (let i = 0; i < 4; i++) {
     deck.push({ text: "수업 안 함", type: "stop" });
