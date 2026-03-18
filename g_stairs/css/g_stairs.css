@@ -1,0 +1,225 @@
+#container {
+  position: relative;
+  width: 100%;
+  height: calc(100vh - 60px);
+  overflow: hidden;
+  background-color: #b0c8e0;
+  background-image: url('../../asset/img/stairs_bg.png');
+  background-size: auto 300%;
+  background-repeat: no-repeat;
+  background-position: center 100%;
+}
+
+#stairs-guide {
+  width: 100%;
+  padding: 14px 18px;
+  background-color: #2ecc71;
+  color: #fff;
+  font-size: 20px;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  z-index: 10;
+  box-sizing: border-box;
+}
+
+#game-area {
+  position: relative;
+  width: 600px;
+  height: 100%;
+  margin: 0 auto;
+}
+
+.stair {
+  position: absolute;
+  width: 143px;
+  height: 40px;
+  background-color: white;
+  border-radius: 40px;
+  box-shadow:
+    0 6px 0 rgba(0, 0, 0, 0.12),
+    0 2px 8px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+}
+
+.stair::before {
+  content: '';
+  position: absolute;
+  width: 48px;
+  height: 48px;
+  background-color: white;
+  border-radius: 50%;
+  top: -22px;
+  left: 18px;
+}
+
+.stair::after {
+  content: '';
+  position: absolute;
+  width: 37px;
+  height: 37px;
+  background-color: white;
+  border-radius: 50%;
+  top: -15px;
+  left: 66px;
+}
+
+.stair.current {
+  background-color: #b3d9ff;
+  box-shadow:
+    0 6px 0 rgba(0, 80, 160, 0.2),
+    0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.stair.current::before,
+.stair.current::after {
+  background-color: #b3d9ff;
+}
+
+#character {
+  position: absolute;
+  width: 88px;
+  height: 88px;
+  z-index: 10;
+  background-image: url('../../asset/img/stairs_Jpro.png');
+  background-size: cover;
+  background-position: center top;
+  border-radius: 8px;
+}
+
+#ui {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 20;
+}
+
+#score {
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+#timer {
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+#timer.danger {
+  color: #7f1d1d;
+}
+
+#message {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  padding: 24px 36px;
+  border-radius: 16px;
+  pointer-events: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+/* 버튼 두 개 나란히 */
+#message .btn-row {
+  display: flex;
+  gap: 12px;
+}
+
+#message.hidden {
+  display: none !important;
+}
+
+/* 버튼 공통 베이스 */
+#start-btn,
+#retry-btn,
+#next-btn {
+  padding: 20px 48px;
+  color: white;
+  font-size: 20px;
+  font-weight: 600;
+  text-align: center;
+  border-radius: 16px;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  transition:
+    transform 0.4s ease,
+    box-shadow 0.4s ease,
+    background-color 0.2s;
+  outline: none;
+}
+
+/* 시작 버튼: 다크 네이비 */
+#start-btn {
+  background-color: #2e3d54;
+}
+
+#retry-btn,
+#next-btn {
+  background-color: #22c55e;
+}
+
+#start-btn:hover {
+  transform: scale(1.08);
+  background-color: #546278;
+}
+
+#retry-btn:hover,
+#next-btn:hover {
+  transform: scale(1.08);
+  background-color: #4ade80;
+}
+
+#start-btn:active,
+#retry-btn:active,
+#next-btn:active {
+  transform: scale(0.92);
+}
+
+/* 빨간 버튼: 수업 안 함 */
+#start-btn-fail {
+  padding: 20px 48px;
+  color: white;
+  font-size: 20px;
+  font-weight: 600;
+  text-align: center;
+  border-radius: 16px;
+  background-color: #ef4444;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  transition:
+    transform 0.4s ease,
+    box-shadow 0.4s ease,
+    background-color 0.2s;
+  outline: none;
+}
+
+#start-btn-fail:hover {
+  transform: scale(1.08);
+  box-shadow: 0 25px 50px rgba(239, 68, 68, 0.4);
+  background-color: #f87171;
+}
+
+#start-btn-fail:active {
+  transform: scale(0.92);
+}
+
+.hidden {
+  display: none !important;
+}
