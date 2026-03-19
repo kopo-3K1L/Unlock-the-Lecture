@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>미로 탈출</title>
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="stylesheet" href="../g_maze/css/g_maze.css" />
+  </head>
+  <body>
+    <div id="root">
+      <header id="header">
+        <div class="logo">
+          <span>LOGO</span>
+        </div>
+        <div class="stage-info">
+          <span id="stage-name">현재 스테이지: 1단계</span>
+        </div>
+      </header>
+
+      <main id="container">
+        <div id="maze-guide">
+          <span>
+            초록색 시작 지점으로 들어가 게임을 시작하세요. 벽이나 장애물에
+            닿거나, 미로 밖으로 나가면 실패입니다.
+          </span>
+        </div>
+
+        <div id="maze-area"></div>
+
+        <div id="maze-cursor"></div>
+
+        <div id="ui">
+          <div id="message">
+            <button id="start-btn">시작</button>
+
+            <div class="btn-row hidden" id="fail-btns">
+              <button id="retry-btn">재시도</button>
+              <button id="fail-btn">수업 안 함</button>
+            </div>
+
+            <button id="next-btn" class="hidden">수업한다</button>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <script src="../g_maze/js/g_maze.js" defer></script>
+  </body>
+</html>
