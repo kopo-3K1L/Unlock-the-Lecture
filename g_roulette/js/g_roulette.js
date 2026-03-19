@@ -90,3 +90,4 @@ button.addEventListener("click", () => {
         }
     }, 5000);
 });
+draw()
