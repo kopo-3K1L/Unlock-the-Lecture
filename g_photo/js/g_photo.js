@@ -65,7 +65,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const rand = Math.random();
 
     if (rand < 0.1) {
-      // 10% 확률 초기화 박스
+      // 10% 확률 초기화 박스 (함정)
       box.classList.add("box-green");
       box.textContent = "함정카드";
       box.dataset.type = "reset";
@@ -75,15 +75,14 @@ document.addEventListener("DOMContentLoaded", () => {
       box.textContent = "수업하기";
       box.dataset.type = "green";
     } else {
-      // 70% 확률 수업 안 함
-      box.dataset.type = "pink";
-
-      if (gaugeValue >= 70) {
-        box.classList.add("box-green"); // 70% 이상일 때 초록색
-        box.textContent = "수업 안 함";
+      if (gaugeValue >= 50) {
+        box.classList.add("box-green"); // 초록색 적용
+        box.textContent = "수업하키"; // 텍스트 변경
+        box.dataset.type = "pink";
       } else {
-        box.classList.add("box-pink");
+        box.classList.add("box-pink"); // 50점 미만은 원래대로 핑크색
         box.textContent = "수업 안 함";
+        box.dataset.type = "pink";
       }
     }
 
