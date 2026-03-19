@@ -1,3 +1,8 @@
+@font-face {
+  font-family: Jersey10-Regular;
+  src: url("/asset/fonts/Jersey10-Regular.ttf");
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -15,7 +20,8 @@ body {
   justify-content: center;
   align-items: center;
   overflow-x: auto;
-  background-image: url("asset/img/background.jpg");
+  background-color: black;
+  /* background-image: url("asset/img/background.jpg"); */
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -26,13 +32,14 @@ body {
   background-color: #fff;
   display: flex;
   flex-direction: column;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 0px 50px rgba(109, 109, 109, 0.705);
+  border-radius: 20px;
 }
 
 #header {
   width: 100%;
   height: 80px;
-  border: 2px solid #333;
+  /* border: 2px solid #333; */
   border-bottom: none;
   display: flex;
   justify-content: space-between;
@@ -41,8 +48,12 @@ body {
 }
 
 .logo {
-  font-size: 24px;
-  font-weight: bold;
+  font-size: 40px;
+  margin-left: 20px;
+  margin-top: 10px;
+  letter-spacing: 1px;
+  color: #22c55e; 
+  font-family: Jersey10-Regular, sans-serif;
   display: flex;
   align-items: center;
 }
@@ -55,7 +66,13 @@ body {
 #container {
   width: 100%;
   height: 800px;
-  border: 2px solid #333;
+  /* border: 2px solid #333; */
+  border-radius: 0px 0px 20px 20px;
   position: relative;
   overflow: hidden;
+}
+#stage-name{
+  font-size: 20px;
+  font-weight: bold;
+  color:rgb(77, 74, 74)
 }
