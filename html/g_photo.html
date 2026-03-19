@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>사진 찍기 게임</title>
+    <link rel="stylesheet" href="../g_photo/css/g_photo.css" />
+  </head>
+  <body>
+    <div id="root">
+      <header id="header">
+        <div class="logo"><span>stage 3 : 순간을 맞춰라!</span></div>
+        <div class="stage-info">
+          <span id="stage-name">사진찍기</span>
+        </div>
+      </header>
+
+      <main id="container">
+        <p id="rgb-guide">수업하기를 스페이스바로 맞춰라!</p>
+        <div id="gaugeContainer">
+          <div id="gaugeFill"></div>
+          <span id="gaugeText">0%</span>
+        </div>
+
+        <div id="conveyorArea">
+          <div id="beltItems"></div>
+          <div id="detectionZone"></div>
+        </div>
+
+        <div id="controlBox" style="display: none">수업하기</div>
+      </main>
+    </div>
+    <script src="../g_photo/js/g_photo.js"></script>
+  </body>
+</html>
