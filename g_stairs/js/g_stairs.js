@@ -19,7 +19,7 @@ const messageEl = document.getElementById('message');
 const startBtn = document.getElementById('start-btn');
 const failBtns = document.getElementById('fail-btns');
 const retryBtn = document.getElementById('retry-btn');
-const failBtn = document.getElementById('start-btn-fail');
+const failBtn = document.getElementById('fail-btn');
 const nextBtn = document.getElementById('next-btn');
 
 let stairs = [];
@@ -117,7 +117,7 @@ function move(dir) {
 }
 
 function onSuccess() {
-  // 다음 스테이지 이동 로직 추가 예정
+  // 마무리 엔딩 ㅊㅋㅊㅋ
 }
 
 function onFail() {

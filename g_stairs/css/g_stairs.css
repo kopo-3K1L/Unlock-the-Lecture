@@ -1,8 +1,5 @@
 #container {
   position: relative;
-  width: 100%;
-  height: calc(100vh - 60px);
-  overflow: hidden;
   background-color: #b0c8e0;
   background-image: url('../../asset/img/stairs_bg.png');
   background-size: auto 300%;
@@ -162,9 +159,9 @@
   outline: none;
 }
 
-/* 시작 버튼: 다크 네이비 */
+/* 시작 버튼 */
 #start-btn {
-  background-color: #2e3d54;
+  background-color: #22c55e;
 }
 
 #retry-btn,
@@ -174,7 +171,7 @@
 
 #start-btn:hover {
   transform: scale(1.08);
-  background-color: #546278;
+  background-color: #4ade80;
 }
 
 #retry-btn:hover,
@@ -190,7 +187,7 @@
 }
 
 /* 빨간 버튼: 수업 안 함 */
-#start-btn-fail {
+#fail-btn {
   padding: 20px 48px;
   color: white;
   font-size: 20px;
@@ -210,13 +207,13 @@
   outline: none;
 }
 
-#start-btn-fail:hover {
+#fail-btn:hover {
   transform: scale(1.08);
   box-shadow: 0 25px 50px rgba(239, 68, 68, 0.4);
   background-color: #f87171;
 }
 
-#start-btn-fail:active {
+#fail-btn:active {
   transform: scale(0.92);
 }
 
