@@ -26,7 +26,9 @@ function shuffle(array) {
 function initGame() {
   if (!container) return;
 
-  container.innerHTML = "";
+  const cards = container.querySelectorAll(".card");
+  cards.forEach((card) => card.remove());
+
   flippedCards = [];
   matchedCount = 0;
   isLocking = false;
