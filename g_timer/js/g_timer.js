@@ -139,10 +139,11 @@ function resetGame() {
   warning.innerText = "대기 중입니다...";
   warning.className = "";
   stopwatch.className = "stopwatch";
-  backgroundImage.style.backgroundImage =
-    "url('../asset/img/timer-teacher.JPEG')";
+  backgroundImage.style.backgroundImage = "none";
+  backgroundImage.style.backgroundColor = "black";
 
-  containerImage.style.backgroundImage = "url('../asset/img/timer-class.jpg')";
+  containerImage.style.backgroundImage =
+    "url('../asset/img/timer-teacher.JPEG')";
 
   display.style.color = "white";
 
