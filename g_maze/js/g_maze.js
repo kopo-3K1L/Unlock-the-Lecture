@@ -22,23 +22,23 @@ const CURSOR_RADIUS = 7;
 const MAZE_LAYOUT = [
   { type: 'wall', x: 0, y: 0, w: 100, h: 100 },
 
-  { type: 'path', x: 5, y: 8, w: 85, h: 7 },
-  { type: 'path', x: 82, y: 8, w: 8, h: 39 },
+  { type: 'path', x: 5, y: 7, w: 85, h: 10 },
+  { type: 'path', x: 80, y: 7, w: 10, h: 35 },
 
-  { type: 'path', x: 55, y: 40, w: 35, h: 7 },
-  { type: 'path', x: 55, y: 40, w: 7, h: 23 },
-  { type: 'path', x: 28, y: 56, w: 34, h: 7 },
-  { type: 'path', x: 28, y: 40, w: 7, h: 23 },
-  { type: 'path', x: 5, y: 40, w: 30, h: 7 },
+  { type: 'path', x: 52, y: 35, w: 38, h: 10 },
+  { type: 'path', x: 52, y: 35, w: 10, h: 20 },
+  { type: 'path', x: 28, y: 48, w: 34, h: 10 },
+  { type: 'path', x: 28, y: 35, w: 10, h: 23 },
+  { type: 'path', x: 5, y: 35, w: 33, h: 10 },
 
-  { type: 'path', x: 5, y: 40, w: 8, h: 35 },
-  { type: 'path', x: 5, y: 68, w: 85, h: 7 },
+  { type: 'path', x: 5, y: 35, w: 10, h: 38 },
+  { type: 'path', x: 5, y: 65, w: 85, h: 10 },
 
-  { type: 'start', x: 6, y: 9, w: 5, h: 5 },
-  { type: 'end', x: 83, y: 69, w: 5, h: 5 },
+  { type: 'start', x: 6, y: 9, w: 11, h: 6 },
+  { type: 'end', x: 79, y: 67, w: 10, h: 6 },
 
-  { type: 'obstacle', x: 84, y: 20, w: 4, h: 5, range: 12, speed: 0.18 },
-  { type: 'obstacle', x: 7, y: 52, w: 4, h: 5, range: 10, speed: 0.15 },
+  { type: 'obstacle', x: 82, y: 14, w: 5, h: 8, range: 18, speed: 0.12 },
+  { type: 'obstacle', x: 7, y: 42, w: 5, h: 8, range: 18, speed: 0.1 },
 ];
 
 function buildMaze() {
@@ -80,18 +80,19 @@ function buildMaze() {
 
     if (item.type === 'start') {
       el.id = 'start-point';
-      el.classList.add('waiting');
-      el.addEventListener('mouseenter', () => {
+      el.textContent = '눌러서 시작';
+      el.addEventListener('click', () => {
         if (!gameRunning && !gameEnded) {
           gameRunning = true;
-          el.classList.remove('waiting');
+          el.style.opacity = '0.5';
         }
       });
     }
 
     if (item.type === 'end') {
       el.id = 'end-point';
-      el.addEventListener('mouseenter', () => {
+      el.textContent = '수업한다';
+      el.addEventListener('click', () => {
         if (gameRunning && !gameEnded) endGame(true);
       });
     }
@@ -147,7 +148,6 @@ mazeArea.addEventListener('mousemove', (e) => {
 
   if (!gameRunning || gameEnded) return;
 
-  // 원이 닿는가
   const edgePoints = [
     [mouseX + CURSOR_RADIUS, mouseY],
     [mouseX - CURSOR_RADIUS, mouseY],
@@ -193,16 +193,13 @@ function endGame(success) {
   cursorEl.style.display = 'none';
 
   if (success) {
-    startBtn.classList.add('hidden');
-    failBtns.classList.add('hidden');
-    nextBtn.classList.remove('hidden');
+    onSuccess();
   } else {
     startBtn.classList.add('hidden');
     failBtns.classList.remove('hidden');
     nextBtn.classList.add('hidden');
+    messageEl.classList.remove('hidden');
   }
-
-  messageEl.classList.remove('hidden');
 }
 
 function startGame() {
@@ -222,11 +219,11 @@ function startGame() {
 }
 
 function onSuccess() {
-  // 다음 스테이지 이동 로직 추가 예정
+  window.location.href = 'g_dark.html';
 }
 
 function onFail() {
-  // 실패 시 어쩌지
+  //
 }
 
 startBtn.addEventListener('click', startGame);
