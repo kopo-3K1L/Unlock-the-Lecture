@@ -1,3 +1,6 @@
+localStorage.setItem('key', 2);
+getGuide('ㅇㄱㅈㅉㅇㅇ?');
+
 export function initScroll(container, onNext) {
   const buttons = [
     { type: 'fake' },

@@ -1,3 +1,6 @@
+localStorage.setItem('key', 12);
+getGuide('교수님의 점심을 지켜라');
+
 const GAME_W = 600;
 const STAIR_W = 143;
 const STEP_X = 85;
@@ -117,11 +120,7 @@ function move(dir) {
 }
 
 function onSuccess() {
-  // 마무리 엔딩 ㅊㅋㅊㅋ
-}
-
-function onFail() {
-  // 실패 시 이동 로직 추가 예정
+  throwLocalStorage(12);
 }
 
 function endGame(success) {
@@ -185,5 +184,4 @@ timerEl.textContent = TIME_LIMIT;
 
 startBtn.addEventListener('click', startGame);
 retryBtn.addEventListener('click', startGame);
-failBtn.addEventListener('click', onFail);
 nextBtn.addEventListener('click', onSuccess);

@@ -1,3 +1,6 @@
+localStorage.setItem('key', 9);
+getGuide('우리도 탈출 게임 있음 ㅇㅇ');
+
 const container = document.getElementById('container');
 const mazeArea = document.getElementById('maze-area');
 const messageEl = document.getElementById('message');
@@ -219,14 +222,9 @@ function startGame() {
 }
 
 function onSuccess() {
-  window.location.href = 'g_dark.html';
-}
-
-function onFail() {
-  //
+  throwLocalStorage(9);
 }
 
 startBtn.addEventListener('click', startGame);
 retryBtn.addEventListener('click', startGame);
-failBtn.addEventListener('click', onFail);
 nextBtn.addEventListener('click', onSuccess);

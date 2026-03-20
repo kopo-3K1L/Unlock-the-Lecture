@@ -21,11 +21,12 @@
       <main id="container"></main>
     </div>
 
+    <script src="../main.js" defer></script>
     <script type="module">
       import { initScroll } from '../g_scroll/js/g_scroll.js';
 
       initScroll(document.getElementById('container'), () => {
-        window.location.href = 'g_timer.html';
+        throwLocalStorage(2);
       });
     </script>
   </body>
