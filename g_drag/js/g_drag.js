@@ -1,5 +1,8 @@
+localStorage.setItem('key', 5);
+getGuide('버튼 발굴 현장');
+
 const container = document.getElementById('container');
-const guide = document.getElementById('rgb-guide');
+const guide = document.getElementById('drag-guide');
 
 // 방해 요소 개수
 const RED_BTN_COUNT = 124; 
@@ -145,7 +148,8 @@ function makeDraggable(el) {
 
         // 클릭 판정
         if (dx < 5 && dy < 5 && el.id === 'green-button') {
-            alert('스테이지 클리어');
+            goNextStage();
+            // alert('스테이지 클리어');
         }
         isDragging = false;
     });

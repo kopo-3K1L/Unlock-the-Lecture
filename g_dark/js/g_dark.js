@@ -1,3 +1,6 @@
+localStorage.setItem('key', 10);
+getGuide('수업한다, 어디 계세요?');
+
 const container = document.getElementById('container');
 const guide = document.getElementById('dark-guide');
 
@@ -195,9 +198,11 @@ function makeDraggable(el) {
     // 클릭 판정
     if (dx < 5 && dy < 5) {
         if (el.dataset.isReal === 'true') {
-            alert('스테이지 클리어!');
+            goNextStage();
+            // alert('스테이지 클리어!');
         } else {
-            alert('땡!');
+            // 추가해야함
+            // alert('땡!');
         }
     }
     isDragging = false;
