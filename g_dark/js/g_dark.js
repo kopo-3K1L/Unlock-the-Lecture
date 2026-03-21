@@ -1,8 +1,16 @@
+localStorage.setItem('key', 10);
+getGuide('수업한다, 어디 계세요?');
+
 const container = document.getElementById('container');
 const guide = document.getElementById('dark-guide');
 
+
+// 팝업
+const popup = document.getElementById('popup-overlay');
+const popupBtn = document.getElementById('popup-btn');
+
 // 버튼 총 개수
-const TOTAL_BTN_COUNT = 70;
+const TOTAL_BTN_COUNT = 42;
 let zIndexCounter = 100;
 
 // 텍스트 리스트 (진짜 1개 + 가짜들)
@@ -127,6 +135,13 @@ function initDarkness() {
   window.addEventListener('mousemove', updateLight);
 }
 
+// 팝업 닫기 이벤트 연결
+if (popupBtn) {
+  popupBtn.addEventListener('click', () => {
+    popup.classList.add('hidden');
+  });
+}
+
 // -------- g_drag와 유사 --------
 // 드래그 기능 부여
 function makeDraggable(el) {
@@ -195,14 +210,17 @@ function makeDraggable(el) {
     // 클릭 판정
     if (dx < 5 && dy < 5) {
         if (el.dataset.isReal === 'true') {
-            alert('스테이지 클리어!');
+            goNextStage();
+            // alert('스테이지 클리어!');
         } else {
-            alert('땡!');
+            // 추가해야함
+            popup.classList.remove('hidden');
         }
     }
     isDragging = false;
   });
 }
+
 
 // 게임 실행
 initGame();

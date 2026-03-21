@@ -1,21 +1,15 @@
+localStorage.setItem('key', 4);
+getGuide('색감 천재 모십니다');
+
 // 필요한 요소들 가져오기
 const userBtn = document.getElementById('user-btn');
 const rInput = document.getElementById('r-input');
 const gInput = document.getElementById('g-input');
 const bInput = document.getElementById('b-input');
 
-// 페이지 번호 로컬스토리지에 저장
-localStorage.setItem('key', 4);
-
-// 본인 게임 이름 적기
-const gameDescription = "RGB 맞추기";
-
-// 헤더 게임 설명 넣는 함수
-getGuide(gameDescription);
-
 // 정답 설정
 let targetColor = { r: 34, g: 197, b: 94 };
-const threshold = 10;
+const threshold = 50;
 
 // 색상 업데이트 및 성공 체크 함수
 function updateGame() {
@@ -45,7 +39,7 @@ function updateGame() {
 
 // 다음 스테이지로 넘어가는 함수
 function nextStage() {
-    throwLocalStorage(stageNum);
+    goNextStage();
     // alert("축하합니다! 스테이지 클리어!");
     // 여기에 다음 정답 생성 및 스테이지 카운트 올리는 로직 추가
 }
@@ -81,8 +75,6 @@ function validateRGB(e) {
 
     input.addEventListener('input', validateRGB);
 });
-
-// 처음으로 돌아가는 버튼 눌렀을 때 함수 호출
 
 
 // 초기 실행

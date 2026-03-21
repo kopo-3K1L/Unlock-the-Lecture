@@ -3,14 +3,16 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Game Layout Frame</title>
+    <title>Unlock the Lecture</title>
     
     <!-- 공통 스타일 선언 -->
     <link rel="stylesheet" href="../style.css" />
 
+    <!-- reset 스타일 선언 -->
+    <link rel="stylesheet" href="../settings.css" />
+
     <!-- 개별 스타일 선언 -->
     <link rel="stylesheet" href="../g_rgb/css/g_rgb.css" />
-    
   </head>
   <body>
     <div id="root">
@@ -19,10 +21,28 @@
           <span>Unlock the Lecture</span>
         </div>
         <div class="stage-info">
-          <!-- ! 스테이지 변경 필요 -->
-          <span id="stage-name">현재 스테이지: 1단계</span>
+          <span id="stage-name"></span>
         </div>
       </header>
+
+      <!-- 설정 버튼 -->
+      <div id="settings-wrapper">
+        <div id="settings-btn" class="settings-icon">
+          <img src="../asset/img/settings-icon.png" alt="환경설정" />
+        </div>
+      </div>
+
+      <div id="settings-modal" class="modal-overlay" style="display: none">
+        <div class="modal-content">
+          <h2 class="modal-title">MENU</h2>
+          <div class="modal-buttons">
+            <button id="btn-restart-all" class="menu-btn">처음부터</button>
+            <button id="btn-restart-stage" class="menu-btn">다시시작</button>
+            <button id="btn-skip-stage" class="menu-btn">넘어가기</button>
+          </div>
+          <button id="btn-close-modal" class="close-btn">닫기</button>
+        </div>
+      </div>
 
       <main id="container">
         <p id="rgb-guide">수업한다 버튼과 '똑같은 색'을 맞추세요!</p>
@@ -60,5 +80,6 @@
     </div>
     <script src="../main.js" defer></script>
     <script src="../g_rgb/js/g_rgb.js" defer></script>
+    <script src="../settings.js" defer></script>
   </body>
 </html>

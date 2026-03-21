@@ -1,8 +1,11 @@
+localStorage.setItem('key', 5);
+getGuide('버튼 발굴 현장');
+
 const container = document.getElementById('container');
-const guide = document.getElementById('rgb-guide');
+const guide = document.getElementById('drag-guide');
 
 // 방해 요소 개수
-const RED_BTN_COUNT = 124; 
+const RED_BTN_COUNT = 75; 
 let zIndexCounter = 100;
 
 // 게임 초기화 및 버튼 뿌리기
@@ -34,8 +37,12 @@ function initGame() {
     }
     
     // 무작위 좌표 셔플
-    slots.sort(() => Math.random() - 0.5);
-
+    // slots.sort(() => Math.random() - 0.5);
+    for (let i = slots.length - 1; i > 0; i--) {
+        // 0부터 i까지의 정수를 잘 반환하기 위함 (+ 1)
+        const j = Math.floor(Math.random() * (i + 1));
+        [slots[i], slots[j]] = [slots[j], slots[i]];
+    }
     // 수업하기 좌표 지정 (무작위로 셔플된 요소 중 첫 번째 사용)
     const targetPos = slots[0];
 
@@ -145,7 +152,8 @@ function makeDraggable(el) {
 
         // 클릭 판정
         if (dx < 5 && dy < 5 && el.id === 'green-button') {
-            alert('스테이지 클리어');
+            goNextStage();
+            // alert('스테이지 클리어');
         }
         isDragging = false;
     });

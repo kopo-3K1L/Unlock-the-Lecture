@@ -9,7 +9,7 @@
 }
 
 /* 게임 설명 */
-#rgb-guide {
+#drag-guide {
   width: 100%;
   padding: 14px 18px;
   background-color: #2ecc71;
@@ -19,7 +19,7 @@
   text-align: center;
   position: absolute;
   top:0;
-  z-index: 9999;
+  z-index: 500;
 }
 
 /* 버튼 공통 */
