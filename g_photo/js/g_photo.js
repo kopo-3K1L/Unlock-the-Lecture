@@ -5,6 +5,15 @@ document.addEventListener("DOMContentLoaded", () => {
   const beltItems = document.getElementById("beltItems");
   const container = document.getElementById("container");
 
+  // 페이지 번호 로컬스토리지에 저장
+  localStorage.setItem("key", 11);
+
+  // 본인 게임 이름 적기
+  const gameDescription = "지금이야!";
+
+  // 헤더 게임 설명 넣는 함수
+  getGuide(gameDescription);
+
   // 게임 알림창
   const gameAlert = document.createElement("div");
   gameAlert.id = "gameAlert";
@@ -15,7 +24,7 @@ document.addEventListener("DOMContentLoaded", () => {
   let boxIdCounter = 0;
   let spawnIntervalId;
 
-  // 1. 초기화 함수
+  // 초기화 함수
   function resetGame() {
     gaugeValue = 0;
     isGameActive = true;
@@ -34,7 +43,7 @@ document.addEventListener("DOMContentLoaded", () => {
     showGameAlert("으아아앙!", "warning");
   }
 
-  // 2. 알림창 표시 함수
+  // 알림창 표시 함수
   function showGameAlert(message, type) {
     gameAlert.textContent = message;
     gameAlert.className = "";
@@ -44,7 +53,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }, 600);
   }
 
-  // 3. 게이지별 속도 계산
+  // 게이지별 속도 계산
   function getCurrentSpeed() {
     if (gaugeValue >= 90) return 15;
     if (gaugeValue >= 75) return 12;
@@ -54,7 +63,7 @@ document.addEventListener("DOMContentLoaded", () => {
     return 4.5;
   }
 
-  // 4. 컨베이어 버튼 생성
+  // 컨베이어 버튼 생성
   function createBox() {
     if (!isGameActive) return;
 
@@ -128,7 +137,7 @@ document.addEventListener("DOMContentLoaded", () => {
     requestAnimationFrame(moveBox);
   }
 
-  // 5. 스페이스바 판정 전용 로직
+  // 스페이스바 판정
   document.addEventListener("keydown", (e) => {
     if (e.code === "Space" && isGameActive) {
       e.preventDefault();
@@ -163,7 +172,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // 6. 판정 결과 및 점수 처리
+  // 판정 결과
   function checkHit(box, isGreen) {
     if (!isGameActive) return;
 
@@ -215,9 +224,14 @@ document.addEventListener("DOMContentLoaded", () => {
       isGameActive = false;
       clearInterval(spawnIntervalId);
       beltItems.innerHTML = "";
+
       detectionZone.classList.add("completed");
-      detectionZone.textContent = "수업한다";
-      showGameAlert("참 잘했어요!", "success");
+      detectionZone.textContent = "수업하기";
+      detectionZone.style.cursor = "pointer";
+
+      detectionZone.onclick = () => {
+        goNextStage();
+      };
     }
   }
 

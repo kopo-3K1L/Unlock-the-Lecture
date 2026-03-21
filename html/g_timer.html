@@ -7,12 +7,31 @@
 
     <!-- 공통 스타일 선언 -->
     <link rel="stylesheet" href="../style.css" />
+    <link rel="stylesheet" href="../settings.css" />
 
     <!-- 개별 스타일 선언 -->
     <link rel="stylesheet" href="../g_timer/css/g_timer.css" />
   </head>
   <body>
     <div id="root">
+      <div id="settings-wrapper">
+        <div id="settings-btn" class="settings-icon">
+          <img src="../asset/img/settings-icon.png" alt="환경설정" />
+        </div>
+      </div>
+
+      <div id="settings-modal" class="modal-overlay" style="display: none">
+        <div class="modal-content">
+          <h2 class="modal-title">환경설정</h2>
+          <div class="modal-buttons">
+            <button id="btn-restart-all" class="menu-btn">처음부터</button>
+            <button id="btn-restart-stage" class="menu-btn">다시시작</button>
+            <button id="btn-skip-stage" class="menu-btn">넘어가기</button>
+          </div>
+          <button id="btn-close-modal" class="close-btn">닫기</button>
+        </div>
+      </div>
+
       <div id="header">
         <div class="logo">
           <span>Unlock the Lecture</span>
@@ -35,6 +54,8 @@
         </div>
       </div>
     </div>
+    <script src="../main.js" defer></script>
     <script src="../g_timer/js/g_timer.js"></script>
+    <script src="../settings.js" defer></script>
   </body>
 </html>

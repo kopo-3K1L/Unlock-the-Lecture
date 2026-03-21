@@ -5,6 +5,15 @@ let matchedCount = 0;
 let isLocking = false;
 let mainContainer = document.getElementById("container");
 
+// 페이지 번호 로컬스토리지에 저장
+localStorage.setItem("key", 6);
+
+// 본인 게임 이름 적기
+const gameDescription = "솔로 지옥 커플 지옥";
+
+// 헤더 게임 설명 넣는 함수
+getGuide(gameDescription);
+
 // 1. 카드 데이터 생성
 function getDeck() {
   const deck = [];
@@ -95,7 +104,7 @@ function checkMatch() {
       // 초록색 12장을 모두 찾았을 때
       if (matchedCount === 12) {
         alert("성공");
-        initGame();
+        goNextStage();
       }
     }, 600);
   }

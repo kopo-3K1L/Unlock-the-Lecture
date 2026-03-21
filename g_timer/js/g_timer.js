@@ -3,6 +3,15 @@ let timerId;
 let isRunning = false;
 let isFinished = false;
 
+// 페이지 번호 로컬스토리지에 저장
+localStorage.setItem("key", 3);
+
+// 본인 게임 이름 적기
+const gameDescription = "인간 타이머 그 잡채";
+
+// 헤더 게임 설명 넣는 함수
+getGuide(gameDescription);
+
 function handleTimer() {
   const btn = document.getElementById("action-btn");
   const display = document.getElementById("timer-display");
@@ -62,7 +71,7 @@ function handleTimer() {
   else {
     const elapsed = (Date.now() - startTime) / 1000;
 
-    if (elapsed >= 5.0 && elapsed < 5.1) {
+    if (elapsed >= 1.0 && elapsed < 5.1) {
       // 5초에 성공
       clearInterval(timerId);
       isRunning = false;
@@ -82,6 +91,11 @@ function handleTimer() {
 
       btn.innerText = "다음 교실로";
       btn.className = "reset-mode";
+
+      // 버튼을 클릭했을 때 main.js의 goNextStage 함수를 실행
+      btn.onclick = () => {
+        goNextStage();
+      };
     } else {
       excitingAnimation();
     }
