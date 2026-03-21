@@ -3,19 +3,24 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Game Layout Frame</title>
+    <title>Unlock the Lecture</title>
     <link rel="stylesheet" href="../g_basic_screen/css/g_basic_screen.css" />
     <link rel="stylesheet" href="../style.css" />
+    <link
+      rel="shortcut icon"
+      href="../asset/img/favicon.ico"
+      type="image/x-icon"
+    />
     <script src="../main.js"></script>
   </head>
   <body>
     <div id="root">
       <header id="header">
         <div class="logo">
-          <span>LOGO</span>
+          <span>Unlock the Lecture</span>
         </div>
         <div class="stage-info">
-          <span id="stage-name">기초 화면</span>
+          <span id="stage-name"></span>
         </div>
       </header>
 
@@ -24,9 +29,7 @@
           <button id="red-button" onclick="changeImageHandler()">
             수업 안함
           </button>
-          <button id="green-button" onclick="goNextStage()">
-            수업 한다
-          </button>
+          <button id="green-button" onclick="goNextStage()">수업 한다</button>
         </article>
       </main>
     </div>
