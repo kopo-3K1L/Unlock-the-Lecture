@@ -71,7 +71,7 @@ function handleTimer() {
   else {
     const elapsed = (Date.now() - startTime) / 1000;
 
-    if (elapsed >= 1.0 && elapsed < 5.1) {
+    if (elapsed >= 5.0 && elapsed < 5.1) {
       // 5초에 성공
       clearInterval(timerId);
       isRunning = false;
