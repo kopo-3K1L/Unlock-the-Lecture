@@ -120,7 +120,7 @@ function move(dir) {
 }
 
 function onSuccess() {
-  throwLocalStorage(12);
+  goNextStage();
 }
 
 function endGame(success) {

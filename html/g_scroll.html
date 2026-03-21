@@ -15,6 +15,7 @@
         </div>
         <div class="stage-info">
           <span id="stage-name"></span>
+          <button onclick="resetAllStages()">리셋</button>
         </div>
       </header>
 
@@ -26,7 +27,7 @@
       import { initScroll } from '../g_scroll/js/g_scroll.js';
 
       initScroll(document.getElementById('container'), () => {
-        throwLocalStorage(2);
+        goNextStage();
       });
     </script>
   </body>
