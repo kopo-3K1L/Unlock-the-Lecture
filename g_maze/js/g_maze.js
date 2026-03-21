@@ -222,7 +222,7 @@ function startGame() {
 }
 
 function onSuccess() {
-  throwLocalStorage(9);
+  goNextStage();
 }
 
 startBtn.addEventListener('click', startGame);

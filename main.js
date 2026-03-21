@@ -14,39 +14,37 @@ const pageList = [
   { id: 13, url: '/html/g_final_screen.html' },
 ];
 
-checkSaveLoadPage();
-
+// 헤더에 띄우는 스테이지 번호와 게임명
 function getGuide(gameDescription) {
-  // 로컬스토리지에 저장된 페이지 번호 가져오기
   let stageNum = localStorage.getItem('key');
-
-  // 헤더의 스테이지 설명 넣기
   const stageInput = document.getElementById('stage-name');
   stageInput.innerText = `스테이지 ${stageNum} : ${gameDescription}`;
 }
 
-// 로컬 스토리지를 활용해서 페이지 넘기기
-function throwLocalStorage(stageNum) {
+// 다음 스테이지로 이동
+function goNextStage() {
+  let stageNum = localStorage.getItem('key');
   window.location.href = pageList[stageNum].url;
 }
 
-// 1. localstorage null이 아닐 때 페이지 이동
-// 2. 해당 게임 다시 실행
-function loadThisPage(stageNum) {
-  let stageBackNumber = stageNum - 1;
-  window.location.href = pageList[stageBackNumber].url;
+// 현재 스테이지 다시 하게 리로드하기
+function replayThisStage() {
+  let stageNum = localStorage.getItem('key');
+  window.location.href = pageList[stageNum - 1].url;
 }
 
-// 페이지 불러오는 함수
+// 접속 시 이어하기 판단 (index.html에서만 호출합니다)
 function checkSaveLoadPage() {
   let stageNum = localStorage.getItem('key');
-  if (stageNum !== null) {
-    loadThisPage(stageNum);
+  if (stageNum === null) {
+    window.location.href = '/html/g_basic_screen.html';
+    return;
   }
+  replayThisStage();
 }
 
-// 처음으로 돌아가는 함수
-function returnPage() {
-  localStorage.setItem('key', 0);
-  window.location.href = pageList[0].url;
+// 처음부터 다시 하기
+function resetAllStages() {
+  localStorage.removeItem('key');
+  window.location.href = '/index.html';
 }

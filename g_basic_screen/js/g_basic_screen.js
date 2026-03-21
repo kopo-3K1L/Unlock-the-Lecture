@@ -1,3 +1,5 @@
+localStorage.setItem('key', 1);
+
 function changeImageHandler(){
     const container = document.getElementById("container")
     const button = document.getElementById("red-button")
