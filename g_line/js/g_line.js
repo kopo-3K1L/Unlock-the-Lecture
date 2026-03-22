@@ -36,7 +36,7 @@ function render() {
   if (oldMsg) oldMsg.remove();
   if (gamestate == "HOME") {
     container.style.backgroundImage =
-      "url('../../asset/img/linegamecharacter.png')";
+      "url('../asset/img/linegamecharacter.webp')";
     startButton.style.backgroundColor = "#263747";
     startButton.onclick = () => setGameState("PLAYING");
   } else if (gamestate == "PLAYING") {
@@ -53,7 +53,7 @@ function render() {
     };
   } else if (gamestate == "RESULT") {
     container.style.backgroundImage =
-      "url('../../asset/img/linegamecharacter.png')";
+      "url('../asset/img/linegamecharacter.webp')";
     const p = document.createElement("p");
     p.id = "result-msg";
     if (isSuccess) {

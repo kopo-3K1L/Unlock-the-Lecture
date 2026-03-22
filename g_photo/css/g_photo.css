@@ -1,5 +1,5 @@
 #container {
-  background-image: url("../../asset/img/photo-container.png");
+  background-image: url("../../asset/img/photo-container.webp");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -17,10 +17,6 @@
   position: absolute;
   top: 0;
 }
-
-/* =========================================
-   게임 UI (게이지, 컨베이어, 감지 구역)
-========================================= */
 
 /* 상단 게이지 */
 #gaugeContainer {
@@ -109,10 +105,6 @@
   top: 0;
   left: 0;
 }
-
-/* =========================================
-   버튼 스타일 (움직이는 타겟 및 완료 버튼)
-========================================= */
 
 /* 컨베이어 위를 지나가는 버튼 공통 - 위로 10px 올림 */
 .box-item {

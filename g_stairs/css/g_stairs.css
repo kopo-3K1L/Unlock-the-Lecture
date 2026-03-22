@@ -1,7 +1,7 @@
 #container {
   position: relative;
   background-color: #b0c8e0;
-  background-image: url('../../asset/img/stairs_bg.png');
+  background-image: url("../../asset/img/stairs_bg.webp");
   background-size: auto 300%;
   background-repeat: no-repeat;
   background-position: center 100%;
@@ -42,7 +42,7 @@
 }
 
 .stair::before {
-  content: '';
+  content: "";
   position: absolute;
   width: 48px;
   height: 48px;
@@ -53,7 +53,7 @@
 }
 
 .stair::after {
-  content: '';
+  content: "";
   position: absolute;
   width: 37px;
   height: 37px;
@@ -80,7 +80,7 @@
   width: 88px;
   height: 88px;
   z-index: 10;
-  background-image: url('../../asset/img/stairs_Jpro.png');
+  background-image: url("../../asset/img/stairs_Jpro.webp");
   background-size: cover;
   background-position: center top;
   border-radius: 8px;

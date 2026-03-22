@@ -84,10 +84,10 @@ function handleTimer() {
       display.innerText = " ";
 
       containerImage.style.backgroundImage =
-        "url('../asset/img/timer-Lecture-class.jpg')";
+        "url('../asset/img/timer-Lecture-class.webp')";
 
       backgroundImage.style.backgroundImage =
-        "url('../asset/img/timer-teacherHappy.jpg')";
+        "url('../asset/img/timer-teacherHappy.webp')";
 
       btn.innerText = "다음 교실로";
       btn.className = "reset-mode";
@@ -122,10 +122,10 @@ function excitingAnimation() {
   status.innerText = "신나게 노는 중!";
   status.classList.add("exciting-text");
   backgroundImage.style.backgroundImage =
-    "url('../asset/img/timer-classmate.png')";
+    "url('../asset/img/timer-classmate.webp')";
 
   containerImage.style.backgroundImage =
-    "url('../asset/img/timer-playing.jpg')";
+    "url('../asset/img/timer-playing.webp')";
 
   display.innerText = "하하하";
   display.style.color = "red";
@@ -157,7 +157,7 @@ function resetGame() {
   backgroundImage.style.backgroundColor = "black";
 
   containerImage.style.backgroundImage =
-    "url('../asset/img/timer-teacher.JPEG')";
+    "url('../asset/img/timer-teacher.webp')";
 
   display.style.color = "white";
 

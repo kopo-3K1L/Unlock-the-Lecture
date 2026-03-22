@@ -55,7 +55,7 @@ function initGame() {
     `;
 
     mainContainer.style.backgroundImage =
-      "url('../asset/img/timer-teacher.JPEG')";
+      "url('../asset/img/timer-teacher.webp')";
     card.addEventListener("click", flipCard);
     container.appendChild(card);
   });
@@ -85,7 +85,7 @@ function checkMatch() {
   // 실패: 핑크색 2개 선택 시 초기화
   if (type1 === "stop" && type2 === "stop") {
     mainContainer.style.backgroundImage =
-      "url('../asset/img/timer-playing.jpg')";
+      "url('../asset/img/timer-playing.webp')";
 
     setTimeout(() => {
       alert("실패");
