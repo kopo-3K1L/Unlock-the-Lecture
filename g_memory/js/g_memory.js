@@ -5,14 +5,11 @@ let matchedCount = 0;
 let isLocking = false;
 let mainContainer = document.getElementById("container");
 
-// 페이지 번호 로컬스토리지에 저장
-localStorage.setItem("key", 6);
-
-// 본인 게임 이름 적기
-const gameDescription = "솔로 지옥 커플 지옥";
-
-// 헤더 게임 설명 넣는 함수
-getGuide(gameDescription);
+// 페이지 번호 로컬스토리지에 저장 / 헤더 게임 설명
+window.addEventListener('pageshow', () => {
+  localStorage.setItem("key", 6);
+  getGuide("솔로 지옥 커플 지옥");
+});
 
 // 1. 카드 데이터 생성
 function getDeck() {

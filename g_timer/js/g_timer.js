@@ -3,14 +3,11 @@ let timerId;
 let isRunning = false;
 let isFinished = false;
 
-// 페이지 번호 로컬스토리지에 저장
-localStorage.setItem("key", 3);
-
-// 본인 게임 이름 적기
-const gameDescription = "인간 타이머 그 잡채";
-
-// 헤더 게임 설명 넣는 함수
-getGuide(gameDescription);
+// 페이지 번호 로컬스토리지에 저장 / 헤더 게임 설명
+window.addEventListener('pageshow', () => {
+  localStorage.setItem("key", 3);
+  getGuide("인간 타이머 그 잡채");
+});
 
 function handleTimer() {
   const btn = document.getElementById("action-btn");

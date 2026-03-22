@@ -1,5 +1,7 @@
-localStorage.setItem("key", 1);
-getGuide("시작화면");
+window.addEventListener('pageshow', () => {
+  localStorage.setItem("key", 1);
+  getGuide("시작화면");
+});
 
 function changeImageHandler() {
   const container = document.getElementById("container");

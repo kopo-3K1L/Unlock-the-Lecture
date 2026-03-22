@@ -1,5 +1,7 @@
-localStorage.setItem('key', 4);
-getGuide('색감 천재 모십니다');
+window.addEventListener('pageshow', () => {
+  localStorage.setItem('key', 4);
+  getGuide('색감 천재 모십니다');
+});
 
 // 필요한 요소들 가져오기
 const userBtn = document.getElementById('user-btn');
