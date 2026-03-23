@@ -1,6 +1,6 @@
 @font-face {
   font-family: Jersey10-Regular;
-  src: url("/asset/fonts/Jersey10-Regular.ttf");
+  src: url("./asset/fonts/Jersey10-Regular.ttf");
 }
 
 * {

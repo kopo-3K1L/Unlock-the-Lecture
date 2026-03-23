@@ -5,14 +5,11 @@ document.addEventListener("DOMContentLoaded", () => {
   const beltItems = document.getElementById("beltItems");
   const container = document.getElementById("container");
 
-  // 페이지 번호 로컬스토리지에 저장
-  localStorage.setItem("key", 11);
-
-  // 본인 게임 이름 적기
-  const gameDescription = "지금이야!";
-
-  // 헤더 게임 설명 넣는 함수
-  getGuide(gameDescription);
+  // 페이지 번호 로컬스토리지에 저장 / 헤더 게임 설명
+  window.addEventListener('pageshow', () => {
+    localStorage.setItem("key", 11);
+    getGuide("지금이야!");
+  });
 
   // 게임 알림창
   const gameAlert = document.createElement("div");

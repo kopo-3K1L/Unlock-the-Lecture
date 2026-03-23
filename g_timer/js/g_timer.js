@@ -3,14 +3,11 @@ let timerId;
 let isRunning = false;
 let isFinished = false;
 
-// 페이지 번호 로컬스토리지에 저장
-localStorage.setItem("key", 3);
-
-// 본인 게임 이름 적기
-const gameDescription = "인간 타이머 그 잡채";
-
-// 헤더 게임 설명 넣는 함수
-getGuide(gameDescription);
+// 페이지 번호 로컬스토리지에 저장 / 헤더 게임 설명
+window.addEventListener('pageshow', () => {
+  localStorage.setItem("key", 3);
+  getGuide("인간 타이머 그 잡채");
+});
 
 function handleTimer() {
   const btn = document.getElementById("action-btn");
@@ -84,10 +81,10 @@ function handleTimer() {
       display.innerText = " ";
 
       containerImage.style.backgroundImage =
-        "url('../asset/img/timer-Lecture-class.jpg')";
+        "url('../asset/img/timer-Lecture-class.webp')";
 
       backgroundImage.style.backgroundImage =
-        "url('../asset/img/timer-teacherHappy.jpg')";
+        "url('../asset/img/timer-teacherHappy.webp')";
 
       btn.innerText = "다음 교실로";
       btn.className = "reset-mode";
@@ -122,10 +119,10 @@ function excitingAnimation() {
   status.innerText = "신나게 노는 중!";
   status.classList.add("exciting-text");
   backgroundImage.style.backgroundImage =
-    "url('../asset/img/timer-classmate.png')";
+    "url('../asset/img/timer-classmate.webp')";
 
   containerImage.style.backgroundImage =
-    "url('../asset/img/timer-playing.jpg')";
+    "url('../asset/img/timer-playing.webp')";
 
   display.innerText = "하하하";
   display.style.color = "red";
@@ -157,7 +154,7 @@ function resetGame() {
   backgroundImage.style.backgroundColor = "black";
 
   containerImage.style.backgroundImage =
-    "url('../asset/img/timer-teacher.JPEG')";
+    "url('../asset/img/timer-teacher.webp')";
 
   display.style.color = "white";
 

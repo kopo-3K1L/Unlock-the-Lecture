@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Unlock the Lecture</title>
-    
+
     <!-- 공통 스타일 선언 -->
     <link rel="stylesheet" href="../style.css" />
 
@@ -13,6 +13,13 @@
 
     <!-- 개별 스타일 선언 -->
     <link rel="stylesheet" href="../g_rgb/css/g_rgb.css" />
+
+    <!-- 파비콘 -->
+    <link
+      rel="shortcut icon"
+      href="../asset/img/favicon.ico"
+      type="image/x-icon"
+    />
   </head>
   <body>
     <div id="root">
@@ -28,7 +35,7 @@
       <!-- 설정 버튼 -->
       <div id="settings-wrapper">
         <div id="settings-btn" class="settings-icon">
-          <img src="../asset/img/settings-icon.png" alt="환경설정" />
+          <img src="../asset/img/settings-icon.webp" alt="환경설정" />
         </div>
       </div>
 
@@ -62,18 +69,36 @@
         <div id="rgb-area">
           <!-- 입력 하나 구역 (R) -->
           <div class="input-group">
-            <label for="r-input" style="color: red;">R</label>
-            <input type="number" id="r-input" min="0" max="255" placeholder="0">
+            <label for="r-input" style="color: red">R</label>
+            <input
+              type="number"
+              id="r-input"
+              min="0"
+              max="255"
+              placeholder="0"
+            />
           </div>
           <!-- 입력 하나 구역 (g) -->
           <div class="input-group">
-            <label for="g-input" style="color: green;">G</label>
-            <input type="number" id="g-input" min="0" max="255" placeholder="0">
+            <label for="g-input" style="color: green">G</label>
+            <input
+              type="number"
+              id="g-input"
+              min="0"
+              max="255"
+              placeholder="0"
+            />
           </div>
           <!-- 입력 하나 구역 (b) -->
           <div class="input-group">
-            <label for="b-input" style="color: blue;">B</label>
-            <input type="number" id="b-input" min="0" max="255" placeholder="0">
+            <label for="b-input" style="color: blue">B</label>
+            <input
+              type="number"
+              id="b-input"
+              min="0"
+              max="255"
+              placeholder="0"
+            />
           </div>
         </div>
       </main>
