@@ -7,12 +7,19 @@
     <link rel="stylesheet" href="../style.css" />
     <link rel="stylesheet" href="../settings.css" />
     <link rel="stylesheet" href="../g_scroll/css/g_scroll.css" />
+
+    <!-- 파비콘 -->
+    <link
+      rel="shortcut icon"
+      href="../asset/img/favicon.ico"
+      type="image/x-icon"
+    />
   </head>
   <body>
     <div id="root">
       <div id="settings-wrapper">
         <div id="settings-btn" class="settings-icon">
-          <img src="../asset/img/settings-icon.png" alt="환경설정" />
+          <img src="../asset/img/settings-icon.webp" alt="환경설정" />
         </div>
       </div>
       <div id="settings-modal" class="modal-overlay" style="display: none">
@@ -41,9 +48,9 @@
     <script src="../main.js" defer></script>
     <script src="../settings.js" defer></script>
     <script type="module">
-      import { initScroll } from '../g_scroll/js/g_scroll.js';
+      import { initScroll } from "../g_scroll/js/g_scroll.js";
 
-      initScroll(document.getElementById('container'), () => {
+      initScroll(document.getElementById("container"), () => {
         goNextStage();
       });
     </script>

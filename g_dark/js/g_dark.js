@@ -1,5 +1,7 @@
-localStorage.setItem('key', 10);
-getGuide('수업한다, 어디 계세요?');
+window.addEventListener('pageshow', () => {
+  localStorage.setItem('key', 10);
+  getGuide('수업한다, 어디 계세요?');
+});
 
 const container = document.getElementById('container');
 const guide = document.getElementById('dark-guide');

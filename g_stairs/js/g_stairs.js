@@ -1,5 +1,7 @@
-localStorage.setItem('key', 12);
-getGuide('교수님의 점심을 지켜라');
+window.addEventListener('pageshow', () => {
+  localStorage.setItem('key', 12);
+  getGuide('교수님의 점심을 지켜라');
+});
 
 const GAME_W = 600;
 const STAIR_W = 143;

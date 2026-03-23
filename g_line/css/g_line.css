@@ -1,12 +1,12 @@
-.background{
+.background {
   background-size: 100% 100%;
   background-repeat: no-repeat;
   background-position: center;
 }
-.lineURL{
-  background-image: url("../../asset/img/linegamecharacter.png");
+.lineURL {
+  background-image: url("../../asset/img/linegamecharacter.webp");
 }
-#line-guide{
+#line-guide {
   width: 100%;
   padding: 14px 16px;
   background-color: #2ecc71;
@@ -19,8 +19,8 @@
 #startButton {
   position: absolute;
   left: 50%;
-  transform: translate(-50%,-50%);
-  padding: 1.25rem 3rem; 
+  transform: translate(-50%, -50%);
+  padding: 1.25rem 3rem;
   font-size: 1.25rem;
   font-weight: 600;
   text-align: center;
@@ -31,12 +31,16 @@
   cursor: pointer;
   overflow: hidden;
   outline: none;
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  box-shadow:
+    0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
   margin-bottom: 40px;
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  transition:
+    transform 0.4s ease,
+    box-shadow 0.4s ease;
 }
-.top{
-  top : 85%;
+.top {
+  top: 85%;
 }
 
 #startButton::before {

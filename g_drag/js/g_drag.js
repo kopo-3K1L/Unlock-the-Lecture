@@ -1,5 +1,7 @@
-localStorage.setItem('key', 5);
-getGuide('버튼 발굴 현장');
+window.addEventListener('pageshow', () => {
+  localStorage.setItem('key', 5);
+  getGuide('버튼 발굴 현장');
+});
 
 const container = document.getElementById('container');
 const guide = document.getElementById('drag-guide');

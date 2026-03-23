@@ -1,6 +1,6 @@
 /* 게임 컨테이너 */
 #container {
-  background-image: url("../../asset/img/timer-teacher.JPEG");
+  background-image: url("../../asset/img/timer-teacher.webp");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -18,13 +18,14 @@
   font-weight: bold;
   text-align: center;
   position: absolute;
-  top:0;
+  top: 0;
   z-index: 500;
 }
 
 /* 버튼 공통 */
-.red-button, #green-button {
-  position: absolute; 
+.red-button,
+#green-button {
+  position: absolute;
   padding: 20px 48px;
   color: white;
   font-size: 20px;
@@ -35,7 +36,9 @@
   outline: none;
   box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
   user-select: none;
-  transition: transform 0.2s, background-color 0.2s;
+  transition:
+    transform 0.2s,
+    background-color 0.2s;
   white-space: nowrap;
   margin: 0;
   display: block;
@@ -68,10 +71,22 @@
 /* 애니메이션 정의 */
 /* JS의 top/left 좌표를 중앙에 맞추기 위해  translate(-50% -50%) 필요 */
 @keyframes buttonAppear {
-    from { opacity: 0; transform: translate(-50%, -50%) scale(0.9); }
-    to { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+  from {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
 }
 @keyframes greenAppear {
-    from { opacity: 0; transform: translate(-50%, -50%) scale(0.9); }
-    to { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+  from {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
 }

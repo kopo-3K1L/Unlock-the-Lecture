@@ -1,18 +1,18 @@
 /* 게임 컨테이너 */
-#container{
-  background-image: url("../../asset/img/timer-teacher.JPEG");
+#container {
+  background-image: url("../../asset/img/timer-teacher.webp");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   display: flex;
-  flex-direction: column;    
-  justify-content: center;  
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
   position: relative;
 }
 
 /* 버튼 row */
-#button-wrap{
+#button-wrap {
   align-items: center;
   display: flex;
   flex-direction: row;
@@ -22,38 +22,42 @@
 }
 
 /* 버튼 크기 설정 */
-.color-box{
+.color-box {
   width: 220px;
   height: 100px;
 }
 
 /* 버튼 공통 */
 .color-box button {
-    width: 100%;
-    height: 100%;
-    padding: 20px 48px;
-    color: white;
-    font-size: 1.8rem;
-    font-weight: 600;
-    border-radius: 20px;
-    border: none;
-    cursor: pointer;
-    transition: transform 0.4s ease, box-shadow 0.4s ease, background-color 0.2s, filter 0.3s;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    animation: buttonAppear 0.4s ease 0.2s forwards;
-    opacity: 0;
+  width: 100%;
+  height: 100%;
+  padding: 20px 48px;
+  color: white;
+  font-size: 1.8rem;
+  font-weight: 600;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+  transition:
+    transform 0.4s ease,
+    box-shadow 0.4s ease,
+    background-color 0.2s,
+    filter 0.3s;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  animation: buttonAppear 0.4s ease 0.2s forwards;
+  opacity: 0;
 }
 
 /* 사용자 버튼 */
 #user-btn {
-    background-color: #ef4444;
-    cursor: not-allowed;
+  background-color: #ef4444;
+  cursor: not-allowed;
 }
 
 /* 타겟 버튼 */
 #target-btn {
-    background-color: #22c55e;
-    cursor: not-allowed;
+  background-color: #22c55e;
+  cursor: not-allowed;
 }
 
 /* 성공 시 활성화 */
@@ -69,16 +73,28 @@
 
 /* 애니메이션 정의 */
 @keyframes buttonAppear {
-    from { opacity: 0; transform: scale(0.9); }
-    to { opacity: 1; transform: scale(1); }
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 @keyframes pulse-glow {
-    from { transform: scale(1); filter: brightness(1); }
-    to { transform: scale(1.05); filter: brightness(1.2); }
+  from {
+    transform: scale(1);
+    filter: brightness(1);
+  }
+  to {
+    transform: scale(1.05);
+    filter: brightness(1.2);
+  }
 }
 
 /* rgb 입력 영역 */
-#rgb-area{
+#rgb-area {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -89,14 +105,14 @@
   height: 150px;
   border-radius: 20px;
   width: 60%;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   padding: 10px;
   background: rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
-.input-group{
+.input-group {
   display: flex;
   width: 120px;
   height: 30px;
@@ -106,8 +122,8 @@
 }
 
 /* input 창 */
-.input-group input{
-  flex:1;
+.input-group input {
+  flex: 1;
   height: 100%;
   width: 0;
   font-size: 23px;
@@ -115,15 +131,15 @@
 }
 
 /* label 설정 */
-.input-group label{
+.input-group label {
   font-weight: 800;
   font-size: 25px;
-  text-shadow: 
-    -1px -1px 0 #ffffff,  
-     1px -1px 0 #ffffff,
-    -1px  1px 0 #ffffff,
-     1px  1px 0 #ffffff,
-     2px 2px 5px rgba(0,0,0,0.5);
+  text-shadow:
+    -1px -1px 0 #ffffff,
+    1px -1px 0 #ffffff,
+    -1px 1px 0 #ffffff,
+    1px 1px 0 #ffffff,
+    2px 2px 5px rgba(0, 0, 0, 0.5);
 }
 
 /* 게임 설명 */
@@ -136,5 +152,5 @@
   font-weight: bold;
   text-align: center;
   position: absolute;
-  top:0;
+  top: 0;
 }

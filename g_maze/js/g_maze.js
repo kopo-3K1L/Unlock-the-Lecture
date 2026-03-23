@@ -1,5 +1,7 @@
-localStorage.setItem('key', 9);
-getGuide('우리도 탈출 게임 있음 ㅇㅇ');
+window.addEventListener('pageshow', () => {
+  localStorage.setItem('key', 9);
+  getGuide('우리도 탈출 게임 있음 ㅇㅇ');
+});
 
 const container = document.getElementById('container');
 const mazeArea = document.getElementById('maze-area');
